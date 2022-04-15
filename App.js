@@ -4,26 +4,33 @@ import styled from 'styled-components/native';
 
 const Page = styled.SafeAreaView`
   flex:1;
-  display: flex;
-  background-color: black;
-  justify-content: center;
-  align-items: center;
+  backgroundColor: #0F110C;
 `;
 
-const Texto = styled.Text`
-  color: ${props=>props.cor};
-  font-size: ${props=>props.fontSize};
-  font-weight: bold;
+const Header = styled.View`
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  backgroundColor: #eee;
+`;
+
+const Quadrado = styled.View`
+  height: 50px;
+  width: 50px;
+  backgroundColor: ${props=>props.cor};
 `;
 
 export default () => {
   return (
     <Page>
       <StatusBar hidden />
-      <Texto cor="red" fontSize="1.5rem">Hey!</Texto>
+      <Header>
+        <Quadrado cor="red"></Quadrado>
+        <Quadrado cor="green"></Quadrado>
+        <Quadrado cor="blue"></Quadrado>
 
-      <Texto cor="green" fontSize="1.5rem">Segundo texto legal</Texto>
-      <Texto cor="white" fontSize="1rem">Terceiro texto legal</Texto>
+        <Quadrado cor="black"></Quadrado>
+      </Header>
     </Page>
   );
 };
