@@ -1,53 +1,31 @@
 import React, { Component } from 'react';
 import { SafeAreaView, StatusBar, Text, StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-/* export default () => {
+const Page = styled.SafeAreaView`
+  flex:1;
+  display: flex;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Texto = styled.Text`
+  color: ${props=>props.cor};
+  font-size: ${props=>props.fontSize};
+  font-weight: bold;
+`;
+
+export default () => {
   return (
-    <Text>Texto 1</Text>
-  );
-} */
-
-/* function textoInicial() {
-  return (
-    <Text>Texto 2</Text>
-  );
-} */
-
-/* class TextoInicial extends Component {
-  render() {
-    return (
-      <Text>Texto 3</Text>
-    );
-  }
-} */
-
-const TextoInicial = () => {
-  return (
-    <SafeAreaView style={styles.page}>
+    <Page>
       <StatusBar hidden />
+      <Texto cor="red" fontSize="1.5rem">Hey!</Texto>
 
-      <Text style={{ 
-        color: '#ffffff',
-        fontSize: 25,
-      }}>Hey!</Text>
-
-      <Text style={styles.texto}>Segundo texto legal</Text>
-
-      <Text style={[styles.texto, {fontSize: 35}]}>Terceiro texto legal</Text>
-    </SafeAreaView>
+      <Texto cor="green" fontSize="1.5rem">Segundo texto legal</Texto>
+      <Texto cor="white" fontSize="1rem">Terceiro texto legal</Texto>
+    </Page>
   );
 };
 
-const styles = StyleSheet.create({
-  page: {
-    width: 200,
-    height: 200,
-    backgroundColor: '#ff0000'
-  },
-  texto: { 
-    color: '#ffffff',
-    fontSize: 25,
-  }
-});
-
-export default TextoInicial;
+//export default TextoInicial;
