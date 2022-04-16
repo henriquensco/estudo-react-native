@@ -30,37 +30,62 @@ const Texto = styled.Text`
   padding: 5px;
 `;
 
+const Quadrado = styled.View`
+  backgroundColor: #fff;
+  width: 200px;
+  height: 200px;
+  padding: 5px 5px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 4px;
+`;
+
 const Hello = (props) => {
 
   const [ name, setName ] = useState("novo");
   const [ backupName, setBackupName] = useState("");
+  const [ mostrar, setMostrar ] = useState(false);
 
   const handleClick = () => {
     setBackupName(name);
+    
+    //setMostrar(true);
+    if(mostrar == true) {
+      setMostrar(false);
+    } else {
+      setMostrar(true);
+    }
+
   };
 
   return(
     <View>
-      <Texto>Escreva algo:</Texto>
+      <Texto>Qual o seu nome?</Texto>
 
       <Input onChangeText={(e) => {setName(e)}} />
 
-      <Button title="Salvar" onPress={handleClick}/>
+      <Button title={mostrar ? 'Esconder Nome' : 'Mostrar Nome'} onPress={handleClick}/>
 
-      <Text style={{
+      {/* <Button title="Salvar" onPress={handleClick}/> */}
+
+      {/* <Text style={{
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#fff'
-      }}>{name}</Text>
+      }}>{name}</Text> */}
 
-      <Text style={{
-        fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        color: '#f1f1f1'
-      }}>{backupName}</Text>
-
+      {mostrar &&
+        <Quadrado>
+          <Text style={{
+            fontSize: 20,
+            fontWeight: 'bold',
+            textAlign: 'center',
+            color: '#000'
+          }}>Seu nome é: {backupName}</Text>
+        </Quadrado>
+      }
 
     </View>
     /* <Text>Nome: {name}</Text> */
