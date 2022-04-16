@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, StatusBar, Text, StyleSheet, Alert } from 'react-native';
+import { SafeAreaView, View, StatusBar, Text, StyleSheet, Button } from 'react-native';
 import styled from 'styled-components/native';
 
 /* 
@@ -32,18 +32,36 @@ const Texto = styled.Text`
 
 const Hello = (props) => {
 
-  const [name, setName] = useState("novo");
+  const [ name, setName ] = useState("novo");
+  const [ backupName, setBackupName] = useState("");
+
+  const handleClick = () => {
+    setBackupName(name);
+  };
 
   return(
     <View>
       <Texto>Escreva algo:</Texto>
+
       <Input onChangeText={(e) => {setName(e)}} />
+
+      <Button title="Salvar" onPress={handleClick}/>
+
       <Text style={{
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#fff'
-      }}>{name}.</Text>
+      }}>{name}</Text>
+
+      <Text style={{
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#f1f1f1'
+      }}>{backupName}</Text>
+
+
     </View>
     /* <Text>Nome: {name}</Text> */
     /* <Text>{props.frase}</Text> */
