@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView, View, StatusBar, Text, StyleSheet, Button } from 'react-native';
 import styled from 'styled-components/native';
 
@@ -73,6 +73,10 @@ export default () => {
       alert("Digite o valor da conta!");
     }
   };
+
+  useEffect(() => {
+    calc();
+  }, [pct]);
 
   return (
     <Page>
