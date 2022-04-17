@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 
 import Header from './src/components/Header';
+import Images from './src/components/Images';
 
 /* 
 Separação dos components
@@ -19,6 +20,7 @@ export default () => {
 			<StatusBar hidden />
 
 			<Header />
+			<Images />
 		</Page>
 	);
 };

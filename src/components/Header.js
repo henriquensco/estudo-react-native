@@ -7,6 +7,11 @@ const Header = styled.View`
     backgroundColor: #ccc;
     justify-content: center;
     align-items: center;
+    shadow-color: #000;
+    shadow-offset: 0px 2px;
+    shadow-opacity: 0.8;
+    shadow-radius: 2px;
+    elevation: 1;
 `;
 
 const HeaderText = styled.Text`
