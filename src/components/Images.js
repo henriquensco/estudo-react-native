@@ -1,5 +1,5 @@
-import React from 'react';
-import { Image } from 'react-native';
+import React, { useState } from 'react';
+import { Image, Text } from 'react-native';
 import styled from 'styled-components/native';
 
 const Section = styled.View`
@@ -15,6 +15,9 @@ const SectionText = styled.Text`
 `;
 
 export default () => {
+
+    const [ status, setStatus ] = useState('');
+
     return (
         <Section>
             {/* uso de imagens locais */}
@@ -31,7 +34,15 @@ export default () => {
                 source={{uri: 'https://static.displate.com/280x392/displate/2015-11-25/a13de54d7d36171e0d58643044ff97ed.jpg'}} 
                 style={{ width: 250, height: 250}}
                 resizeMode="cover"
+                defaultSource={require('../assets/images/placeholder.png')}
+                onLoadStart={() => setStatus('carregando...')}
+                onLoadEnd={() => setStatus('carregou!!!')}
+                onError={(e) => setStatus(e.nativeEvent.error)}
+                onProgress={(e) => setStatus(e.nativeEvent.total)}
             />
+
+            <SectionText style={{fontWeight: 'bold'}}>Tempo de carregamento da imagem remota</SectionText>
+            <Text>{status}</Text>
 
         </Section>
     );
