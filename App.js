@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { StatusBar } from 'react-native';
-import { Platform } from 'react-native-web';
+import { StatusBar, Platform, Alert } from 'react-native';
+//import { Platform } from 'react-native-web';
 import styled from 'styled-components/native';
 
 /* 
@@ -38,15 +38,25 @@ const KeyboardArea = styled.KeyboardAvoidingView`
 
 export default () => {
 
-  /* useEffect(() => {
-    alert('SO: ' + Platform.OS);
-  }, []); */
+  useEffect(() => {
+
+    //Uso do recurso alert
+    Alert.alert(
+      'AVISO IMPORTANTE',
+      'Mensagem qualquer',
+      [
+        {text: 'Concordo', onPress: () => { alert('concordou') }},
+        {text: 'Não Concordo', onPress: () => { alert('não concordou') }},
+      ]
+    );
+    
+  }, []);
 
   return (
     <Page>
       <StatusBar hidden />
 
-      <KeyboardArea behavior={Platform.OS == 'ios' ? 'padding' : null}>
+      <KeyboardArea behavior={Platform.OS == 'ios' ? 'padding' : 'padding'}>
         <Logo />
         <Input />
       </KeyboardArea>
