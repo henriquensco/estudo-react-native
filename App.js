@@ -3,7 +3,10 @@ import { StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 
 import Header from './src/components/Header';
-import Images from './src/components/Images';
+//import Images from './src/components/Images';
+import NativeBase from './src/components/NativeBase';
+
+import { NativeBaseProvider } from "native-base";
 
 /* 
 Separação dos components
@@ -16,12 +19,15 @@ const Page = styled.SafeAreaView`
 export default () => {
 
 	return (
-		<Page>
-			<StatusBar hidden />
+		<NativeBaseProvider>
+			<Page>
+				<StatusBar hidden />
 
-			<Header />
-			<Images />
-		</Page>
+				<Header />
+				{/* <Images /> */}
+				<NativeBase />
+			</Page>
+		</NativeBaseProvider>
 	);
 };
 
