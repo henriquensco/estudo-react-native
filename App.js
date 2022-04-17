@@ -55,8 +55,7 @@ const PctArea = styled.View`
   padding: 5px 5px;
 `;
 
-const PctItem = styled.Button`
-`;
+const PctItem = styled.Button``;
 
 export default () => {
 
@@ -67,7 +66,7 @@ export default () => {
   const calc = () => {
     let nBill = parseFloat(bill);
     
-    if(nBill) {
+    if (nBill) {
       setTip((pct/100) * nBill);
     } else {
       alert("Digite o valor da conta!");
@@ -110,7 +109,6 @@ export default () => {
 
         <ResultItemTitle>Valor da Total</ResultItemTitle>
         <ResultItem>R$ {(parseFloat(bill) + tip).toFixed(2)}</ResultItem>
-
       </ResultArea>
       }
 
