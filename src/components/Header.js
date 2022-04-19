@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { VStack, HStack, Button, IconButton, Icon, Text, NativeBaseProvider, Center, Box, StatusBar, Header } from "native-base";
+import { VStack, HStack, Button, IconButton, Icon, Text, NativeBaseProvider, Center, Box, StatusBar, Header, View } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 
 
@@ -24,11 +24,10 @@ const HeaderText = styled.Text`
 
 export default () => {
 	return (
-
-		<NativeBaseProvider>
-			<StatusBar bg="#3700B3" barStyle="light-content" />
+		<>
+			<StatusBar bg="#C1C1C1" barStyle="light-content" />
 			<Box safeAreaTop bg="#6200ee" />
-			<HStack bg="#6200ee" px="1" py="4" justifyContent="space-between" alignItems="center" w="100%">
+			<HStack bg="#010101" px="1" py="4" justifyContent="space-between" alignItems="center" w="100%">
 				<HStack alignItems="center">
 					<IconButton icon={<Icon size="md" as={MaterialIcons} name="menu" color="white" />} />
 					<Text color="white" fontSize="20" fontWeight="bold">
@@ -41,6 +40,6 @@ export default () => {
 					<IconButton icon={<Icon as={MaterialIcons} name="more-vert" size="md" color="white" />} />
 				</HStack>
 			</HStack>
-    	</NativeBaseProvider>
+    	</>
 	);
 };

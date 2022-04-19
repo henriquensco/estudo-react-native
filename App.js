@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, View, Text } from 'react-native';
 import styled from 'styled-components/native';
 
 import Header from './src/components/Header';
 //import Images from './src/components/Images';
+import ModuloSete from './src/components/ModuloSete';
 import NativeBase from './src/components/NativeBase';
 
 import { NativeBaseProvider } from "native-base";
@@ -21,11 +22,14 @@ export default () => {
 	return (
 		<NativeBaseProvider>
 			<Page>
-				<StatusBar hidden />
+				{/* <StatusBar hidden /> */}
 
 				<Header />
+
 				{/* <Images /> */}
-				<NativeBase />
+				{/* <NativeBase /> */}
+				
+				<ModuloSete />
 			</Page>
 		</NativeBaseProvider>
 	);
