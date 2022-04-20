@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
 
-import 'react-native-get-random-values';
-import { v4 as uuid } from 'uuid';
+/* import 'react-native-get-random-values';
+import { v4 as uuid } from 'uuid'; */
 
 
 const AddItemArea = styled.View`
@@ -22,7 +22,7 @@ export default (props) => {
 
     const [item, setItem] = useState('');
 
-    const handleSubmit = () => {
+    /* const handleSubmit = () => {
         let items = [...props.items];
 
         if (item.trim() != '') {
@@ -35,6 +35,16 @@ export default (props) => {
             props.setItems(items);
 
             alert('cadastrado!');
+        } else {
+            alert('Você precisar adicionar um item!');
+        }
+
+        setItem('');
+    }; */
+
+    const handleSubmit = () => {
+        if (item.trim() != '') {
+            props.onAdd(item);
         } else {
             alert('Você precisar adicionar um item!');
         }
