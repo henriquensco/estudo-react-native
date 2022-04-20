@@ -7,6 +7,7 @@ import Header from './src/components/Header';
 import ModuloSete from './src/components/ModuloSete';
 import NativeBase from './src/components/NativeBase';
 import AsyncStorage from './src/components/AsyncStorage';
+import Modal from './src/components/Modal';
 
 import { NativeBaseProvider } from "native-base";
 
@@ -32,7 +33,9 @@ export default () => {
 				
 				{/* <ModuloSete /> */}
 
-				<AsyncStorage />
+				{/* <AsyncStorage /> */}
+
+				<Modal />
 			</Page>
 		</NativeBaseProvider>
 	);
