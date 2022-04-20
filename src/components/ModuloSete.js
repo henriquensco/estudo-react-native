@@ -47,6 +47,7 @@ const ItemCheck = styled.View`
     border-radius: 10px;
     border: 5px solid #fff;
 `;
+
 /* 
 export default () => {
     return (

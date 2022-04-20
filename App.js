@@ -6,6 +6,7 @@ import Header from './src/components/Header';
 //import Images from './src/components/Images';
 import ModuloSete from './src/components/ModuloSete';
 import NativeBase from './src/components/NativeBase';
+import AsyncStorage from './src/components/AsyncStorage';
 
 import { NativeBaseProvider } from "native-base";
 
@@ -29,7 +30,9 @@ export default () => {
 				{/* <Images /> */}
 				{/* <NativeBase /> */}
 				
-				<ModuloSete />
+				{/* <ModuloSete /> */}
+
+				<AsyncStorage />
 			</Page>
 		</NativeBaseProvider>
 	);
