@@ -11,6 +11,8 @@ import Modal from './src/components/Modal';
 
 import { NativeBaseProvider } from "native-base";
 
+import FilmesEmCartaz from './src/apps/FilmesEmCartaz';
+
 /* 
 Separação dos components
 */
@@ -35,7 +37,10 @@ export default () => {
 
 				{/* <AsyncStorage /> */}
 
-				<Modal />
+				{/* <Modal /> */}
+
+				<FilmesEmCartaz />
+				
 			</Page>
 		</NativeBaseProvider>
 	);
