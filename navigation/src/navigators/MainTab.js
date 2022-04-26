@@ -9,6 +9,8 @@ import TabAboutScreen from '../pages/TabAboutScreen';
 import TabConfigScreen from '../pages/TabConfigScreen';
 import TabBarIcon from '../components/TabBarIcon';
 
+import HomeStack from './HomeStack';
+
 const Tab = createBottomTabNavigator();
 
 export default MainTab = () => {
@@ -51,7 +53,7 @@ export default MainTab = () => {
                 tabBarActiveBackgroundColor: '#FCA311'
             })} */>
             <Tab.Screen name="TabAbout" component={TabAboutScreen} options={{ title: 'About' }} />
-            <Tab.Screen name="TabHome" component={TabHomeScreen} options={{ title: 'Home' }} />
+            <Tab.Screen name="TabHome" component={HomeStack} options={{ title: 'Home' }} />
             <Tab.Screen name="TabConfig" component={TabConfigScreen} options={{ title: 'Config' }} />
         </Tab.Navigator>
     );

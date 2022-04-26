@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Button } from 'react-native';
 
-const TabHomeScreen = ({navigation}) => {
+const TabHome2Screen = (props) => {
     return (
         <View style={styles.container}>
-            <Text>TabHomeScreen</Text>
-            <Button title='Ir para a tela 2' onPress={() => navigation.navigate('TabHome2Screen')}/>
+            <Text>TabHome2Screen</Text>
         </View>
     );
 };
@@ -18,4 +17,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TabHomeScreen;
+export default TabHome2Screen;
